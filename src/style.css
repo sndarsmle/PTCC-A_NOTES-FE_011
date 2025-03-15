@@ -1,0 +1,36 @@
+body {
+  background-color: white !important; 
+  min-height: 100vh; 
+}
+
+.container {
+  width: 100% !important; 
+  max-width: 100% !important;
+  padding: 20px;
+}
+
+.card {
+  background-color: #fdfdfd !important; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header-title {
+  font-weight: bold;
+  color: #222 !important;
+}
+
+.card-content {
+  font-size: 14px;
+  color: #333 !important;
+}
+
+.has-text-grey {
+  font-size: 12px;
+  color: #555 !important;
+}
