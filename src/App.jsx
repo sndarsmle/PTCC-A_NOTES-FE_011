@@ -26,15 +26,21 @@ function App() {
   };
 
   const handleDeleteNote = async (id) => {
-    if (window.confirm("Apakah Anda yakin ingin menghapus catatan ini?")) {
-      try {
-        await axios.delete(`${BASE_URL}/delete-notes/${id}`);
+    if (!window.confirm("Apakah Anda yakin ingin menghapus catatan ini?")) return;
+  
+    try {
+      const response = await axios.delete(`${BASE_URL}/delete-notes/${id}`);
+      
+      if (response.status === 200) {
         handleNoteAdded();
-      } catch (error) {
-        console.error("Gagal menghapus catatan:", error);
+      } else {
+        console.error("Gagal menghapus catatan: Respons tidak sesuai");
       }
+    } catch (error) {
+      console.error("Gagal menghapus catatan:", error.message || error);
     }
   };
+  
 
   return (
     <section className="section">

@@ -20,7 +20,7 @@ function AddNote({ onNoteAdded, editNote }) {
       if (editNote) {
         await axios.put(`${BASE_URL}/edit-notes/${editNote.id}`, { title, content });
       } else {
-        await axios.post("${BASE_URL}/add-notes", { title, content });
+        await axios.post(`${BASE_URL}/add-notes`, { title, content });
       }
       setTitle("");
       setContent("");
